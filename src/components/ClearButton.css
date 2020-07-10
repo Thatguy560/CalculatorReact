@@ -1,0 +1,12 @@
+.clear-btn {
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-weight: 1.4em;
+  background-color: #cd5c5c;
+  color: black;
+  flex: 1; /* This causes the Clear Button (AC) to stretch to the end. */
+  outline: 1px solid #888888;
+}

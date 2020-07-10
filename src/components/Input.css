@@ -1,0 +1,15 @@
+.input {
+  height: 3em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+  background-color: #8fbc8f;
+  color: white;
+  padding: 0.5em;
+  outline: 1px solid #888888;
+}
+
+/* Input on calculator css */

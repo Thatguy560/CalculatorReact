@@ -40,6 +40,7 @@ class App extends Component {
               .replace("×", "*")
               .replace("÷", "/")
               .replace("√(", "sqrt(")
+              .replace("π", "3.141592653589793") // if more than 1 put a * beforehand?
           ) || "") + "",
       });
     } catch (e) {
@@ -94,6 +95,7 @@ class App extends Component {
           <div className="row">
             <Button handleClick={this.addToInput}>abs(</Button>
             <Button handleClick={this.addToInput}>e</Button>
+            <Button handleClick={this.addToInput}>π</Button>
             {/* <Button handleClick={this.addToInput}>√(</Button> */}
             {/* <Button handleClick={this.addToInput}>^</Button> */}
             {/* <Button handleClick={this.calculatePercentage}>%</Button> */}
@@ -111,7 +113,8 @@ class App extends Component {
                       : this.state.input.slice(-4) === "sin(" ||
                         this.state.input.slice(-4) === "cos(" ||
                         this.state.input.slice(-4) === "tan(" ||
-                        this.state.input.slice(-4) === "log("
+                        this.state.input.slice(-4) === "log(" ||
+                        this.state.input.slice(-4) === "abs("
                       ? this.state.input.slice(0, -4)
                       : this.state.input.includes("syntax ERROR") // If syntax ERROR, then "DEL" will set the state back to an empty string
                       ? ""

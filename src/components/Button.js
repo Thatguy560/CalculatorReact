@@ -9,7 +9,9 @@ const isOperator = (val) => {
     val === "÷" ||
     val === "×" ||
     val === "+" ||
-    val === "-"
+    val === "-" ||
+    val === "*" ||
+    val === "/"
   );
 };
 

@@ -3,19 +3,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-weight: lighter; */
   font-size: 1.4em;
-  font-weight: bold;
+  /* font-weight: bold; */
   background-color: #e0e1e6;
-  font-family: Digital-7;
+  font-family: inherit;
   color: #888888;
   flex: 1;
   outline: 1px solid #888888;
 }
 
+.button-wrapper:hover {
+  background-color: white;
+}
+
+.button-wrapper:active {
+  background-color: whitesmoke;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
 /* If not a number and an operator it will be coloured orange */
 .operator {
-  background-color: #fe9241;
+  background-color: #fe9246;
   color: white;
-  font-family: sans-serif;
+  font-family: inherit;
+}
+
+.operator:hover {
+  background-color: #ffa500;
+}
+
+.operator:active {
+  background-color: #ffa500;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }

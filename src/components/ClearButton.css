@@ -3,10 +3,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-weight: 1.4em;
   background-color: #cd5c5c;
   color: black;
   flex: 1; /* This causes the Clear Button (AC) to stretch to the end. */
   outline: 1px solid #888888;
+}
+
+.clear-btn:hover {
+  background-color: #a52a2a;
+}
+
+.clear-btn:active {
+  background-color: #8b0000;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }

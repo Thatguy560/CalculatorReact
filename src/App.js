@@ -12,42 +12,40 @@ class App extends Component {
     this.state = {
       // Gives the calculator the ability to accept numbers and operators.
       input: "", // input value is initially an empty string
+      displayValue: "0",
     };
   }
 
   addToInput = (val) => {
     this.setState({ input: this.state.input + val }); // Method that allows you to change value of state.
-    console.log(val);
-    console.log(this.state.input);
   };
 
-  calculatePercentage = (val) => {
-    this.setState({ input: math.evaluate(this.state.input / 100) + "*" }); // Method that allows you to change value of state.
-    console.log(val); // if input includes anything apart from a number don't divide by 100
-    console.log(this.state.input);
+  calculatePercentage = () => {
+    const displayValue = this.state.input;
+    const currentValue = parseFloat(displayValue);
+
+    if (currentValue === 0) return;
+
+    const fixedDigits = displayValue.replace(/^-?\d*\.?/, "");
+    const newValue = parseFloat(displayValue) / 100;
+
+    this.setState({
+      input: String(newValue.toFixed(fixedDigits.length + 2)),
+    });
   };
-
-  calculateLogarithm = (val) => {};
-
-  // this.state.input.includes("sin")
-  // ? this.state.input + "s"
-  // : this.state.input
 
   // When we call = we will trigger this function that does math evaluation of current input
   Calculate = () => {
     try {
       this.setState({
-        // do an if else statement if it includes sin cos or tan lag then add bracket after with string interpolartion (create new function)
         input:
-          // this.state.input.prev() !== "(π"
-          //   ? this.state.inputreplace("π", "*3.141592653589793") :
           (math.evaluate(
             this.state.input
               .replace("×", "*")
               .replace("÷", "/")
               .replace("√(", "sqrt(")
+              .replace("∛(", "cbrt(")
               .replace("π", "3.141592653589793")
-            // .replace("logₓʸ", "Math.log10(")
           ) || "") + "",
       });
     } catch (e) {
@@ -67,14 +65,14 @@ class App extends Component {
             <Button handleClick={this.addToInput}>7</Button>
             <Button handleClick={this.addToInput}>8</Button>
             <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={this.addToInput}>÷</Button>
+            <Button handleClick={this.addToInput}>/</Button>
             <Button handleClick={this.addToInput}>sin(</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>4</Button>
             <Button handleClick={this.addToInput}>5</Button>
             <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.addToInput}>×</Button>
+            <Button handleClick={this.addToInput}>*</Button>
             <Button handleClick={this.addToInput}>cos(</Button>
           </div>
           <div className="row">
@@ -96,25 +94,30 @@ class App extends Component {
             <Button handleClick={this.addToInput}>(</Button>
             <Button handleClick={this.addToInput}>)</Button>
             <Button handleClick={this.addToInput}>√(</Button>
+            <Button handleClick={this.addToInput}>∛(</Button>
             <Button handleClick={this.addToInput}>^</Button>
-            <Button handleClick={this.calculatePercentage}>%</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>abs(</Button>
             <Button handleClick={this.addToInput}>e</Button>
             <Button handleClick={this.addToInput}>π</Button>
-            {/* <Button handleClick={this.addToInput}>logₓʸ </Button> */}
+            <Button handleClick={this.addToInput}>!</Button>
+            <Button handleClick={this.calculatePercentage}>%</Button>
           </div>
 
           <div className="row">
             {/* input: "" - This sets the input back to an empty string or removes what we have entered. */}
             <ClearButton
               handleClear={() =>
-                // Will change the input state by deleting the correct value or operator.
+                // Will change the input state by deleting or clearing values or operator.
                 this.setState({
                   input:
                     this.state.input.slice(-2) === "√("
                       ? this.state.input.slice(0, -2)
+                      : this.state.input.slice(-8) === "Infinity"
+                      ? this.state.input.slice(0, -8)
+                      : this.state.input.slice(-3) === "∛("
+                      ? this.state.input.slice(0, -3)
                       : this.state.input.slice(-4) === "sin(" ||
                         this.state.input.slice(-4) === "cos(" ||
                         this.state.input.slice(-4) === "tan(" ||

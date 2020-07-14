@@ -1,16 +1,14 @@
 .input {
-  height: 2.6em;
+  height: 2em;
   display: flex;
   justify-content: flex-end;
   font-family: Digital-7;
   align-items: center;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2.2em;
   text-align: center;
-  background-color: #8fbc8f;
+  background-color: #1c191c;
   color: white;
   padding: 0.5em;
   outline: 1px solid #888888;
 }
-
-/* Input on calculator css */

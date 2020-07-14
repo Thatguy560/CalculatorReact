@@ -2,7 +2,7 @@
 
 ![AppImage](https://raw.githubusercontent.com/Thatguy560/CalculatorReact/master/public/Screenshot%202020-07-14%20at%2018.31.32.png)
 
-A fairly straight forward calculator made with React, I installed 'Math.js' to evaluate expressions. Provides you with fundamental functionality to help solve rudimentary problems and basic trigonometry.
+A fairly straight forward calculator made with React JS, I installed the 'Math.js' dependency to evaluate expressions. This app provides you with fundamental functionality to help solve rudimentary problems and basic Trigonometry.
 
 # Installation
 

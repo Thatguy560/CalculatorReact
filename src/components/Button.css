@@ -7,6 +7,7 @@
   font-size: 1.4em;
   font-weight: bold;
   background-color: #e0e1e6;
+  font-family: Digital-7;
   color: #888888;
   flex: 1;
   outline: 1px solid #888888;
@@ -16,4 +17,5 @@
 .operator {
   background-color: #fe9241;
   color: white;
+  font-family: sans-serif;
 }

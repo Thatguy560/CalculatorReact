@@ -17,13 +17,17 @@ class App extends Component {
 
   addToInput = (val) => {
     this.setState({ input: this.state.input + val }); // Method that allows you to change value of state.
+    console.log(val);
+    console.log(this.state.input);
   };
 
   calculatePercentage = (val) => {
     this.setState({ input: math.evaluate(this.state.input / 100) + "*" }); // Method that allows you to change value of state.
-    console.log(val);
+    console.log(val); // if input includes anything apart from a number don't divide by 100
     console.log(this.state.input);
   };
+
+  calculateLogarithm = (val) => {};
 
   // this.state.input.includes("sin")
   // ? this.state.input + "s"
@@ -35,12 +39,15 @@ class App extends Component {
       this.setState({
         // do an if else statement if it includes sin cos or tan lag then add bracket after with string interpolartion (create new function)
         input:
+          // this.state.input.prev() !== "(π"
+          //   ? this.state.inputreplace("π", "*3.141592653589793") :
           (math.evaluate(
             this.state.input
               .replace("×", "*")
               .replace("÷", "/")
               .replace("√(", "sqrt(")
-              .replace("π", "3.141592653589793") // if more than 1 put a * beforehand?
+              .replace("π", "3.141592653589793")
+            // .replace("logₓʸ", "Math.log10(")
           ) || "") + "",
       });
     } catch (e) {
@@ -96,9 +103,7 @@ class App extends Component {
             <Button handleClick={this.addToInput}>abs(</Button>
             <Button handleClick={this.addToInput}>e</Button>
             <Button handleClick={this.addToInput}>π</Button>
-            {/* <Button handleClick={this.addToInput}>√(</Button> */}
-            {/* <Button handleClick={this.addToInput}>^</Button> */}
-            {/* <Button handleClick={this.calculatePercentage}>%</Button> */}
+            {/* <Button handleClick={this.addToInput}>logₓʸ </Button> */}
           </div>
 
           <div className="row">

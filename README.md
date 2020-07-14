@@ -1,6 +1,6 @@
 # Calculator (Built With React)
 
-![AppImage]()
+![AppImage](https://raw.githubusercontent.com/Thatguy560/CalculatorReact/master/public/Screenshot%202020-07-14%20at%2018.31.32.png)
 
 # Installation
 

@@ -4,6 +4,10 @@
 
 A fairly straight forward calculator made with React JS, I installed the 'Math.js' dependency to evaluate expressions. This app provides you with fundamental functionality to help solve rudimentary problems and basic Trigonometry.
 
+# Visit the deployed app
+
+You can find the deployed app via the following link: https://Thatguy560.github.io/CalculatorReact
+
 # Installation
 
 1. Clone the repo
@@ -14,7 +18,7 @@ A fairly straight forward calculator made with React JS, I installed the 'Math.j
 
 4. npm install
 
-# Using The App
+# Using The App Locally
 
 1. Open up a terminal in your text editor and type 'npm start'
 

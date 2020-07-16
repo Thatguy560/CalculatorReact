@@ -10,6 +10,8 @@
   color: #888888;
   flex: 1;
   outline: 1px solid #888888;
+  cursor: pointer;
+  /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
 }
 
 .button-wrapper:hover {

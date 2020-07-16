@@ -88,7 +88,6 @@ class App extends Component {
             <Button handleClick={() => this.Calculate()}>=</Button>
             <Button handleClick={this.addToInput}>-</Button>
             <Button handleClick={this.addToInput}>log(</Button>
-            {/* <Button handleClick={this.addToInput}>e</Button> */}
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>(</Button>

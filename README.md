@@ -1,6 +1,10 @@
 # Calculator (Built With React)
 
-![AppImage](https://raw.githubusercontent.com/Thatguy560/CalculatorReact/master/public/Screenshot%202020-07-14%20at%2018.31.32.png)
+<!-- ![AppImage](https://raw.githubusercontent.com/Thatguy560/CalculatorReact/master/public/Screenshot%202020-07-14%20at%2018.31.32.png) -->
+
+<p align="center">
+  <img src="DemoOfApp.gif" alt="animated" />
+</p>
 
 A fairly straight forward calculator made with React JS, I installed the 'Math.js' dependency to evaluate expressions. This app provides you with fundamental functionality to help solve rudimentary problems and basic Trigonometry.
 
